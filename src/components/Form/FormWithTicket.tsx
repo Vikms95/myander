@@ -1,4 +1,4 @@
-import { Form } from './index'
+import { Form } from './export'
 import { Button, Form as FormBS } from 'react-bootstrap'
 import { GroupInput } from './FormGroup/GroupInput'
 import { GroupSelect } from './FormGroup/GroupSelect'
@@ -6,15 +6,33 @@ import { GroupSelect } from './FormGroup/GroupSelect'
 export function FormWithTicket() {
   return (
     <Form>
-      <FormBS className='bg-white d-flex flex-column py-5 px-3 rounded-3 w-100'>
-        <GroupInput label='Ticket title' name='title' type='text' />
-        <GroupInput label='Ticket description' name='description' type='text' />
-        <GroupInput label='Deadline' name='date' type='date' />
-        <GroupSelect label='Priority' options={[]} />
-        <GroupSelect label='Type' options={[]} />
+      <FormBS className='d-flex flex-column rounded-3 w-100 bg-white px-3 py-5'>
+        <GroupInput
+          label='Ticket title'
+          name='title'
+          type='text'
+        />
+        <GroupInput
+          label='Ticket description'
+          name='description'
+          type='text'
+        />
+        <GroupInput
+          label='Deadline'
+          name='date'
+          type='date'
+        />
+        <GroupSelect
+          label='Priority'
+          options={[]}
+        />
+        <GroupSelect
+          label='Type'
+          options={[]}
+        />
 
         <Button
-          className='align-self-center px-5 py-1 mt-4 fw-semibold'
+          className='align-self-center fw-semibold mt-4 px-5 py-1'
           variant='primary'
         >
           Create ticket

@@ -1,44 +1,34 @@
-import { Submit } from '@radix-ui/react-form'
-import React, { SyntheticEvent, useEffect, useLayoutEffect, useReducer, useRef } from 'react'
-import { GroupInput } from './FormGroup/GroupInput'
-import { useFetch } from '../../hooks/useFetch'
-import { TCurrentAuthForm } from '@types'
-import {
-  Root as DialogRoot,
-  Portal,
-  Overlay,
-  Content,
-  Title,
-  Trigger,
-  Close,
-} from '@radix-ui/react-dialog'
-import { SubmitButton } from './FormGroup/SubmitButton'
 import { useDocument } from '@/hooks/useDocument'
+import { Content, Portal, Root as DialogRoot, Title } from '@radix-ui/react-dialog'
+import { useRouter } from 'next/router'
+import { GroupInput } from './FormGroup/GroupInput'
+import { SubmitButton } from './FormGroup/SubmitButton'
 
-interface Props {
-  setCurrentForm: React.Dispatch<React.SetStateAction<TCurrentAuthForm>>
-}
-
-export function FormWithLogin({ setCurrentForm }: Props) {
+export function FormWithLogin() {
   const document = useDocument()
-  const [open, setOpen] = useReducer((value) => {
-    setCurrentForm('register')
-    return !value
-  }, true)
+  const router = useRouter()
+
   return (
-    <DialogRoot
-      open={open}
-      modal
-    >
+    <DialogRoot defaultOpen>
       <Portal container={document && document.body}>
         <Content
           className='absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 transform flex-col
      rounded-md bg-white py-10  mobile:px-6 tablet:px-16 laptop:px-20'
         >
-          <section className='flex flex-col'>
+          <fieldset className='flex flex-col'>
             <Title className=' flex items-center justify-center pb-8 font-bold text-dark-blue mobile:text-lg tablet:text-xl'>
               Start meandering.
             </Title>
+            <div>
+              Not a member?
+              <span
+                role='link'
+                onClick={() => router.push('/register')}
+              >
+                {' '}
+                Register{' '}
+              </span>
+            </div>
             <GroupInput
               label='Username'
               name='name'
@@ -53,9 +43,9 @@ export function FormWithLogin({ setCurrentForm }: Props) {
             />
             <SubmitButton
               text='Login'
-              setOpen={setOpen}
+              onClick={() => router.push('/dashboard')}
             />
-          </section>
+          </fieldset>
         </Content>
       </Portal>
     </DialogRoot>

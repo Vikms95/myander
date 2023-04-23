@@ -1,5 +1,20 @@
 import { AuthPage } from '@/components/AuthPage'
 import { AuthPageWithForm } from '@/components/AuthPage/AuthPageWithForm'
-import { FormWithLogin } from '@/components/Form/FormWithLogin'
-import { FormWithRegister } from '@/components/Form/FormWithRegister'
-export { AuthPageWithForm, FormWithRegister, FormWithLogin, AuthPage }
+import {
+  Form,
+  FormWithLogin,
+  FormWithRegister,
+  GroupInput,
+  GroupSelect,
+  SubmitButton,
+} from '@/components/Form/export'
+export {
+  AuthPageWithForm,
+  FormWithRegister,
+  FormWithLogin,
+  AuthPage,
+  GroupInput,
+  GroupSelect,
+  Form,
+  SubmitButton,
+}

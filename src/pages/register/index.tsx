@@ -1,4 +1,4 @@
-import { AuthPage, FormWithLogin } from '@/components/export'
+import { AuthPage, FormWithLogin, FormWithRegister } from '@/components/export'
 
 export default function Home() {
   return (
@@ -7,7 +7,7 @@ export default function Home() {
       className='h-full w-full'
     >
       <AuthPage>
-        <FormWithLogin />
+        <FormWithRegister />
       </AuthPage>
     </main>
   )

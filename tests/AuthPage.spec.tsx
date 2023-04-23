@@ -1,7 +1,19 @@
-// import { AuthPage } from '../src/components/AuthPage'
-// import { render, screen } from '@testing-library/react'
+import { FormWithLogin, FormWithRegister } from '@/components/export'
+import { render, screen } from '@testing-library/react'
 
-test('loads the auth page', () => {
-  //   render(<AuthPage />)
-  //   expect(screen).toBeInTheDocument()
+describe('AuthPage', () => {
+  test('loads the auth page with login form', () => {
+    const mockFn = jest.fn()
+
+    render(<FormWithRegister setCurrentForm={mockFn} />)
+    screen.getByRole('dialog')
+  })
+
+  test('loads the auth page with register form', () => {
+    const mockFn = jest.fn()
+
+    render(<FormWithRegister setCurrentForm={mockFn} />)
+    screen.getByRole('dialog')
+    screen.getByText('Confirm password')
+  })
 })
