@@ -1,8 +1,12 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import { AuthPageWithForm } from '@/components/export'
 
 export default function Home() {
-  return <main>Hello world</main>
+  return (
+    <main
+      data-testid='main'
+      className='h-full w-full'
+    >
+      <AuthPageWithForm />
+    </main>
+  )
 }

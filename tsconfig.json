@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES6",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "checkJs": false,
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -15,9 +16,35 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/*": ["./src/*"]
-    }
+      "@/*": ["./src/*"],
+      "@components": ["./components/export.ts"],
+      //   "@components/*": ["./components/*"],
+      "~/helpers/*": ["./helpers/*"],
+      "@utils/*": ["./utils/*"],
+      "@proxies/*": ["./proxies/*"],
+      "@hooks/*": ["./hooks/*"],
+      "@context/*": ["./context/*"],
+      "@catalog/*": ["./catalog/*"],
+      "@assets/*": ["./assets/*"],
+      "@constants": ["./constants.ts"],
+      "@types": ["./types.d.ts"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "dist/types/**/*.ts",
+    "next.config.js",
+    "next.config.js"
+  ],
   "exclude": ["node_modules"]
 }
