@@ -6,6 +6,5 @@ describe('Home', () => {
   it('renders a heading', () => {
     render(<Home />)
     screen.findByTestId('main')
-    // expect(heading).toBeInTheDocument()
   })
 })

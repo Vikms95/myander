@@ -9,26 +9,29 @@ export function FormWithLogin() {
   const router = useRouter()
 
   return (
-    <DialogRoot defaultOpen>
+    <DialogRoot open>
       <Portal container={document && document.body}>
         <Content
           className='absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 transform flex-col
      rounded-md bg-white py-10  mobile:px-6 tablet:px-16 laptop:px-20'
         >
+          <Title className=' flex items-center justify-center pb-3 font-bold text-dark-blue mobile:text-lg tablet:text-xl'>
+            Start meandering.
+          </Title>
+
+          <div className='mb-4 flex self-center text-sm'>
+            Not a member?
+            <span
+              className='ml-1 cursor-pointer text-blue-500 underline '
+              role='link'
+              onClick={() => router.push('/register')}
+            >
+              {' '}
+              Register{' '}
+            </span>
+          </div>
+
           <fieldset className='flex flex-col'>
-            <Title className=' flex items-center justify-center pb-8 font-bold text-dark-blue mobile:text-lg tablet:text-xl'>
-              Start meandering.
-            </Title>
-            <div>
-              Not a member?
-              <span
-                role='link'
-                onClick={() => router.push('/register')}
-              >
-                {' '}
-                Register{' '}
-              </span>
-            </div>
             <GroupInput
               label='Username'
               name='name'
@@ -43,7 +46,7 @@ export function FormWithLogin() {
             />
             <SubmitButton
               text='Login'
-              onClick={() => router.push('/dashboard')}
+              onClick={() => router.push('/')}
             />
           </fieldset>
         </Content>

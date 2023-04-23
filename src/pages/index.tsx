@@ -1,14 +1,3 @@
-import { AuthPage, FormWithLogin } from '@/components/export'
-
 export default function Home() {
-  return (
-    <main
-      data-testid='main'
-      className='h-full w-full'
-    >
-      <AuthPage>
-        <FormWithLogin />
-      </AuthPage>
-    </main>
-  )
+  return <main>Home</main>
 }

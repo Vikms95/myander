@@ -5,14 +5,14 @@ describe('AuthPage', () => {
   test('loads the auth page with login form', () => {
     const mockFn = jest.fn()
 
-    render(<FormWithRegister setCurrentForm={mockFn} />)
+    render(<FormWithLogin />)
     screen.getByRole('dialog')
   })
 
   test('loads the auth page with register form', () => {
     const mockFn = jest.fn()
 
-    render(<FormWithRegister setCurrentForm={mockFn} />)
+    render(<FormWithRegister />)
     screen.getByRole('dialog')
     screen.getByText('Confirm password')
   })

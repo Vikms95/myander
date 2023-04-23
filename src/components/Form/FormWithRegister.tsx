@@ -9,7 +9,7 @@ export function FormWithRegister() {
   const document = useDocument()
 
   return (
-    <DialogRoot defaultOpen>
+    <DialogRoot open>
       <Portal container={document && document.body}>
         <Content
           className='absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 transform flex-col
@@ -37,7 +37,7 @@ export function FormWithRegister() {
               type='password'
             />
             <SubmitButton
-              onClick={() => router.push('/')}
+              onClick={() => router.push('/login')}
               text='Register'
             />
           </fieldset>

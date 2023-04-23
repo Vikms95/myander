@@ -1,13 +1,13 @@
-import { AuthPage, FormWithRegister } from '@/components/export'
+import { AuthPage, FormWithLogin } from '@/components/export'
 
-export default function Register() {
+export default function Login() {
   return (
     <main
       data-testid='main'
       className='h-full w-full'
     >
       <AuthPage>
-        <FormWithRegister />
+        <FormWithLogin />
       </AuthPage>
     </main>
   )
