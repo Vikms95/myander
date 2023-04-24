@@ -3,6 +3,7 @@ import { Content, Portal, Root as DialogRoot, Title } from '@radix-ui/react-dial
 import { useRouter } from 'next/router'
 import { GroupInput } from './FormGroup/GroupInput'
 import { SubmitButton } from './FormGroup/SubmitButton'
+import { RegisterRedirect } from './RegisterRedirect'
 
 export function FormWithLogin() {
   const document = useDocument()
@@ -18,18 +19,7 @@ export function FormWithLogin() {
           <Title className=' flex items-center justify-center pb-3 font-bold text-dark-blue mobile:text-lg tablet:text-xl'>
             Start meandering.
           </Title>
-
-          <div className='mb-4 flex self-center text-sm'>
-            Not a member?
-            <span
-              className='ml-1 cursor-pointer text-blue-500 underline '
-              role='link'
-              onClick={() => router.push('/register')}
-            >
-              {' '}
-              Register{' '}
-            </span>
-          </div>
+          <RegisterRedirect />
 
           <fieldset className='flex flex-col'>
             <GroupInput
